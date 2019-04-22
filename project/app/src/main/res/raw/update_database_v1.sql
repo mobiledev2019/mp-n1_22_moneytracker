@@ -1,0 +1,1 @@
+-- Version 1: Khởi tạo database chưa có gì update cả :D
