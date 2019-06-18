@@ -156,7 +156,7 @@ public class Transaction implements Serializable {
         category.setId(((Long) data.get("categoryId")).intValue());
 
         Wallet wallet = new Wallet();
-        wallet.setWalletId(((Long) data.get("walletId")).intValue());
+        wallet.setWalletId(((Long) data.get("walletId")));
 
         builder
                 .setTransactionId((Long) data.get("_id"))
