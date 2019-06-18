@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.example.t2m.moneytracker.common.Constants;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,7 +16,7 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
 
-public class MTDate {
+public class MTDate implements Serializable {
     public static MTDate fromIso8601(String dateString) {
         if (dateString.length() < 28) {
             // manually handle short time-zone offset, i.e. 2016-10-22T02:36:46.000+02
@@ -138,6 +139,12 @@ public class MTDate {
         return this;
     }
 
+    public MTDate firstDayOfWeek() {
+        mCalendar.setFirstDayOfWeek(Calendar.MONDAY);
+        mCalendar.set(Calendar.DAY_OF_WEEK,mCalendar.getFirstDayOfWeek());
+        return this;
+    }
+
     public Calendar getCalendar() {
         return mCalendar;
     }
@@ -157,6 +164,7 @@ public class MTDate {
     public int getHourOfDay() {
         return mCalendar.get(Calendar.HOUR_OF_DAY);
     }
+
 
     public long getMillis() {
         return mCalendar.getTimeInMillis();

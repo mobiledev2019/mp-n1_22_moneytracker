@@ -60,6 +60,7 @@ public class BitmapUtils {
 
     public static Bitmap loadImageFromStorage(String uri)
     {
+        if(uri == null ) return null;
         try {
             File f=new File(uri);
             return BitmapFactory.decodeStream(new FileInputStream(f));

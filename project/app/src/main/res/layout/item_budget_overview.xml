@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackgroundItem"
+    android:descendantFocusability="blocksDescendants"
+    android:minHeight="140.0dip">
+
+    <ImageView
+        android:id="@+id/icon_goal"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_medium" />
+
+    <ImageView
+        android:id="@+id/iconWallet"
+        android:layout_width="16.0dip"
+        android:layout_height="16.0dip"
+        android:layout_alignRight="@id/icon_goal"
+        android:layout_alignBottom="@id/icon_goal"
+        android:layout_marginRight="-4.0dip"
+        android:layout_marginBottom="-2.0dip"
+        android:padding="1.0dip"/>
+
+    <TextView
+        android:id="@+id/txtBudgetTitle"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/icon_goal"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/spacing_medium"
+        android:layout_toRightOf="@id/icon_goal" />
+
+    <TextView
+        android:id="@+id/txtTimeRanger"
+        style="@style/TextAppearance.AppCompat.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtBudgetTitle"
+        android:layout_alignLeft="@id/txtBudgetTitle"
+        android:lines="1"
+        android:singleLine="true" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_below="@id/icon_goal"
+        android:layout_alignLeft="@id/txtTimeRanger"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10.0dip"
+        android:layout_marginRight="@dimen/spacing_medium"
+        android:background="@color/colorBackgroundPrimary"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/spent_title"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtBudget"
+        android:layout_alignLeft="@id/txtTimeRanger"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:layout_toLeftOf="@id/spent"
+        android:paddingLeft="0.0dip"
+        android:paddingRight="@dimen/spacing_medium"
+        android:text="@string/budget_spent"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/spent"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/spent_title"
+        android:layout_alignRight="@id/line"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/txtBudget"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line"
+        android:layout_alignLeft="@id/txtTimeRanger"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:layout_toLeftOf="@id/spent"
+        android:paddingLeft="0.0dip"
+        android:paddingRight="@dimen/spacing_medium"
+        android:text="@string/budget"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/value"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/txtBudget"
+        android:layout_alignRight="@id/line"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/current"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spent_title"
+        android:layout_alignLeft="@id/txtBudgetTitle"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:text="@string/transaction_detail_cashback_left" />
+
+    <com.example.t2m.moneytracker.view.CurrencyTextView
+        android:id="@+id/txtAmountLeft"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/current"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/spacing_medium" />
+
+    <TextView
+        android:id="@+id/txtTimeLeft"
+        style="@style/TextAppearance.AppCompat.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/current"
+        android:layout_alignRight="@id/txtAmountLeft"
+        android:lines="1"
+        android:singleLine="true" />
+
+    <ProgressBar
+        android:id="@+id/prgBudget"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/current"
+        android:layout_alignLeft="@id/txtBudgetTitle"
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="@dimen/spacing_medium"
+        android:layout_marginBottom="@dimen/spacing_small"
+        android:max="100" />
+
+</RelativeLayout>

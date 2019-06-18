@@ -4,9 +4,590 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
-    <dimen name="text_margin">16dp</dimen>
+
     <dimen name="appbar_padding_top">8dp</dimen>
     <dimen name="item_category_parent_size">32dp</dimen>
     <dimen name="item_category_child_size">24dp</dimen>
+
+
+
+    <dimen name="actionBarSize">56.0dip</dimen>
+
+    <dimen name="actionbar_button_option_width">40.0dip</dimen>
+
+    <dimen name="actionbar_button_size">48.0dip</dimen>
+
+    <dimen name="actionbar_dropdown_menu_width">260.0dip</dimen>
+
+    <dimen name="actionbar_height">56.0dip</dimen>
+
+    <dimen name="actionbar_height_large">172.0dip</dimen>
+
+    <dimen name="actionbar_popup_menu_action_bar_offset_horizontal">-2.0dip</dimen>
+
+    <dimen name="actionbar_popup_menu_cascade_offset_horizontal">-8.0dip</dimen>
+
+    <dimen name="actionbar_popup_menu_offset_horizontal">-2.0dip</dimen>
+
+    <dimen name="actionbar_popup_menu_offset_vertical">-56.0dip</dimen>
+
+
+    <item name="bannerContentWeight" type="dimen">1.0</item>
+
+    <item name="bannerWeightSum" type="dimen">1.0</item>
+
+    <dimen name="border_line">1.7999878dip</dimen>
+
+    <dimen name="bottom_sheet_width">0.0dip</dimen>
+
+    <dimen name="browser_actions_context_menu_max_width">500.0dip</dimen>
+
+    <dimen name="browser_actions_context_menu_min_padding">20.0dip</dimen>
+
+    <dimen name="budget_progress_height">8.0dip</dimen>
+
+    <dimen name="buffer_chart">5.0dip</dimen>
+
+    <dimen name="button_calculator_radius">0.0dip</dimen>
+
+    <dimen name="button_circle_size">56.0dip</dimen>
+
+    <dimen name="button_doubleline_height">65.0dip</dimen>
+
+    <item name="button_fullscreen_max_width" type="dimen">@dimen/match_parent_custom</item>
+
+    <dimen name="button_height_small">34.0dip</dimen>
+
+    <dimen name="button_radius">4.0dip</dimen>
+
+    <dimen name="button_radius_big">24.0dip</dimen>
+
+    <dimen name="button_shadow_height">0.0dip</dimen>
+
+    <dimen name="button_singleline_height">32.0dip</dimen>
+
+    <dimen name="button_spacing">1.0dip</dimen>
+
+    <item name="card_list_view_padding_bottom" type="dimen">@dimen/spacing_medium</item>
+
+    <dimen name="card_radius">2.0dip</dimen>
+
+    <dimen name="card_shadow_height_2">1.0dip</dimen>
+
+    <dimen name="card_shadow_height_3">1.0dip</dimen>
+
+    <dimen name="cashbook_list_view_padding_bottom">72.0dip</dimen>
+
+    <dimen name="circle_degree_betwween_arcs">0.0dip</dimen>
+
+    <dimen name="circle_dim_legend_icon">32.0dip</dimen>
+
+    <dimen name="circle_distance_legend_chart">8.0dip</dimen>
+
+    <dimen name="circle_font_size">12.0sp</dimen>
+
+    <dimen name="circle_padding">0.0dip</dimen>
+
+    <dimen name="com_facebook_auth_dialog_corner_radius">2.0dip</dimen>
+
+    <dimen name="com_facebook_auth_dialog_corner_radius_oversized">4.0dip</dimen>
+
+    <dimen name="com_facebook_button_corner_radius">2.0dip</dimen>
+
+    <dimen name="com_facebook_button_login_corner_radius">3.0dip</dimen>
+
+    <dimen name="com_facebook_likeboxcountview_border_radius">3.0dip</dimen>
+
+    <dimen name="com_facebook_likeboxcountview_border_width">1.0dip</dimen>
+
+    <dimen name="com_facebook_likeboxcountview_caret_height">3.0dip</dimen>
+
+    <dimen name="com_facebook_likeboxcountview_caret_width">6.0dip</dimen>
+
+    <dimen name="com_facebook_likeboxcountview_text_padding">6.0dip</dimen>
+
+    <dimen name="com_facebook_likeboxcountview_text_size">11.0sp</dimen>
+
+    <dimen name="com_facebook_likeview_edge_padding">2.0dip</dimen>
+
+    <dimen name="com_facebook_likeview_internal_padding">6.0dip</dimen>
+
+    <dimen name="com_facebook_likeview_text_size">11.0sp</dimen>
+
+    <dimen name="com_facebook_profilepictureview_preset_size_large">180.0dip</dimen>
+
+    <dimen name="com_facebook_profilepictureview_preset_size_normal">100.0dip</dimen>
+
+    <dimen name="com_facebook_profilepictureview_preset_size_small">50.0dip</dimen>
+
+
+    <item name="content_width" type="dimen">@dimen/match_parent_custom</item>
+
+    <dimen name="cover_height">150.0dip</dimen>
+
+    <dimen name="cover_width">268.0dip</dimen>
+
+    <dimen name="defalut_font_size">14.0dip</dimen>
+
+    <dimen name="default_border_circle">40.0dip</dimen>
+
+    <dimen name="default_border_line">0.0dip</dimen>
+
+    <dimen name="default_border_shader">1.5dip</dimen>
+
+    <dimen name="default_offset">15.0dip</dimen>
+
+    <dimen name="default_radius_node">14.0dip</dimen>
+
+    <dimen name="default_speed">12.0dip</dimen>
+
+    <dimen name="default_width_line">38.0dip</dimen>
+
+
+    <dimen name="distance_title_chart">30.0dip</dimen>
+
+    <dimen name="drawer_icon_wallet_top">16.0dip</dimen>
+
+    <dimen name="drawer_icon_wallet_top_not_registered">72.0dip</dimen>
+
+    <item name="drawer_search_margin_top" type="dimen">@dimen/system_statusbar_height</item>
+
+    <dimen name="drawer_search_margin_top_not_registered">56.0dip</dimen>
+
+    <dimen name="elevation_0">0.0dip</dimen>
+
+    <dimen name="elevation_1">2.0dip</dimen>
+
+    <dimen name="elevation_12">12.0dip</dimen>
+
+    <dimen name="elevation_16">16.0dip</dimen>
+
+    <dimen name="elevation_2">2.0dip</dimen>
+
+    <dimen name="elevation_24">24.0dip</dimen>
+
+    <dimen name="elevation_3">3.0dip</dimen>
+
+    <dimen name="elevation_4">4.0dip</dimen>
+
+    <dimen name="elevation_6">6.0dip</dimen>
+
+    <dimen name="elevation_8">8.0dip</dimen>
+
+    <dimen name="fab_actions_spacing">16.0dip</dimen>
+
+    <dimen name="fab_icon_size">24.0dip</dimen>
+
+    <dimen name="fab_labels_margin">8.0dip</dimen>
+
+    <dimen name="fab_margin">16.0dip</dimen>
+
+    <dimen name="fab_plus_icon_size">14.0dip</dimen>
+
+    <dimen name="fab_plus_icon_stroke">2.0dip</dimen>
+
+    <dimen name="fab_shadow_offset">3.0dip</dimen>
+
+    <dimen name="fab_shadow_radius">9.0dip</dimen>
+
+    <dimen name="fab_size_mini">40.0dip</dimen>
+
+    <dimen name="fab_size_normal">56.0dip</dimen>
+
+    <dimen name="fab_stroke_width">1.0dip</dimen>
+
+    <dimen name="fastscroll_bubble_radius">44.0dip</dimen>
+
+    <dimen name="fastscroll_bubble_size">88.0dip</dimen>
+
+    <dimen name="fastscroll_bubble_textsize">48.0sp</dimen>
+
+    <dimen name="fastscroll_handle_height">40.0dip</dimen>
+
+    <dimen name="fastscroll_handle_radius">2.0dip</dimen>
+
+    <dimen name="fastscroll_handle_width">4.0dip</dimen>
+
+    <dimen name="fastscroll_scrollbar_margin_bottom">8.0dip</dimen>
+
+    <dimen name="fastscroll_scrollbar_margin_top">8.0dip</dimen>
+
+    <dimen name="fastscroll_scrollbar_padding_end">8.0dip</dimen>
+
+    <dimen name="fastscroll_scrollbar_padding_start">8.0dip</dimen>
+
+    <dimen name="fastscroll_track_width">1.0dip</dimen>
+
+    <dimen name="flag_country_size">40.0dip</dimen>
+
+    <dimen name="flag_size">50.0dip</dimen>
+
+    <dimen name="floating_action_button_margin">16.0dip</dimen>
+
+    <dimen name="floating_add_button_size_mini">48.0dip</dimen>
+
+    <dimen name="floating_add_button_size_normal">64.0dip</dimen>
+
+    <dimen name="font_size_x">12.0sp</dimen>
+
+    <dimen name="font_size_x_extend">10.0sp</dimen>
+
+    <dimen name="font_size_y">12.0sp</dimen>
+
+    <dimen name="go_premium_height">56.0dip</dimen>
+
+    <dimen name="height_action_bar">107.0dip</dimen>
+
+    <dimen name="height_amount_item_credit">88.0dip</dimen>
+
+    <dimen name="height_btn_lixi">36.0dip</dimen>
+
+    <dimen name="height_change_log">270.0dip</dimen>
+
+    <dimen name="height_checkbox">55.0dip</dimen>
+
+    <dimen name="height_circle_chart_view">280.0dip</dimen>
+
+    <dimen name="height_column_chart_view">200.0dip</dimen>
+
+    <dimen name="height_command">48.0dip</dimen>
+
+    <dimen name="height_header_view">54.0dip</dimen>
+
+    <dimen name="height_input_keyboard">165.0dip</dimen>
+
+    <dimen name="height_item_spent_map">72.0dip</dimen>
+
+    <dimen name="height_item_view">90.0dip</dimen>
+
+    <dimen name="height_legend_view">25.0dip</dimen>
+
+    <dimen name="height_time_item_export">64.0dip</dimen>
+
+    <dimen name="hero_height">152.0dip</dimen>
+
+    <dimen name="hero_height_fullscreenwidth">196.0dip</dimen>
+
+    <dimen name="hero_height_not_registered">208.0dip</dimen>
+
+    <dimen name="icon_bar_size">48.0dip</dimen>
+
+    <dimen name="icon_size">40.0dip</dimen>
+
+    <dimen name="icon_size_large">64.0dip</dimen>
+
+    <dimen name="icon_size_small">24.0dip</dimen>
+
+    <dimen name="icon_size_xlarge">96.0dip</dimen>
+
+    <dimen name="icon_size_xsmall">20.0dip</dimen>
+
+    <dimen name="image_receipt_height">500.0dip</dimen>
+
+    <dimen name="item_height">67.0dip</dimen>
+
+    <dimen name="item_premium_detail">56.0dip</dimen>n>
+
+    <dimen name="keyboard_button_height">72.0dip</dimen>
+
+    <dimen name="keyboard_button_textsize">30.0sp</dimen>
+
+    <dimen name="keyboardoff_visible_height">25.0dip</dimen>
+
+    <dimen name="label_size">12.0sp</dimen>
+
+    <dimen name="legend_radius">5.0dip</dimen>
+
+    <dimen name="letter_tile_size">32.0dip</dimen>
+
+    <dimen name="list_item_height">82.0dip</dimen>
+
+    <dimen name="listing_padding_detail_collapsed_left">0.0dip</dimen>
+
+    <dimen name="listing_padding_detail_collapsed_right">0.0dip</dimen>
+
+    <dimen name="listing_padding_detail_expand_left">0.0dip</dimen>
+
+    <dimen name="listing_padding_detail_expand_right">0.0dip</dimen>
+
+    <dimen name="listitem_doubleline_height">72.0dip</dimen>
+
+    <dimen name="listitem_singleline_text_height">48.0dip</dimen>
+
+    <dimen name="listitem_singleline_texticon_height">56.0dip</dimen>
+
+    <dimen name="map_parallax_offset">250.0dip</dimen>
+
+    <dimen name="mapview_detail_height">128.0dip</dimen>
+
+    <dimen name="margin_contine_button">40.0dip</dimen>
+
+    <dimen name="margin_dialog">0.0dip</dimen>
+
+    <dimen name="margin_right">10.0dip</dimen>
+
+    <dimen name="margin_top_amount_item_credit">23.0dip</dimen>
+
+    <dimen name="margin_top_emptyview">180.0dip</dimen>
+
+    <dimen name="margin_top_item_credit">12.0dip</dimen>
+
+    <dimen name="margin_top_item_name">4.0dip</dimen>
+
+    <dimen name="margin_top_text_item">5.0dip</dimen>
+
+    <dimen name="margin_top_text_item_title">8.0dip</dimen>
+
+    <dimen name="match_parent_custom">-1.0px</dimen>
+
+    <dimen name="minImageHeight">50.0dip</dimen>
+
+    <dimen name="minImageWidth">50.0dip</dimen>
+
+    <item name="modalPortraitHeightPct" type="dimen">0.8</item>
+
+    <item name="modalPortraitWidthPct" type="dimen">0.85</item>
+
+    <item name="money_dialog_fixed_height_major" type="dimen">100.0%</item>
+
+    <item name="money_dialog_fixed_height_minor" type="dimen">100.0%</item>
+
+    <item name="money_dialog_fixed_width_major" type="dimen">100.0%</item>
+
+    <item name="money_dialog_fixed_width_minor" type="dimen">100.0%</item>
+
+
+    <dimen name="navigation_header_height">80.0dip</dimen>
+
+    <dimen name="navigation_max_width">320.0dip</dimen>
+
+    <dimen name="navigation_menu_width">264.0dip</dimen>
+
+
+    <dimen name="padding">5.0dip</dimen>
+
+    <dimen name="paddingBottomChart">10.0dip</dimen>
+
+    <dimen name="paddingMonthTextChart">5.0dip</dimen>
+
+    <dimen name="paddingSmall">16.0dip</dimen>
+
+    <dimen name="padding_icon_bar">12.0dip</dimen>
+
+    <dimen name="padding_lable">2.0dip</dimen>
+
+    <dimen name="padding_large">18.0dip</dimen>
+
+    <dimen name="padding_legend_view">6.0dip</dimen>
+
+    <dimen name="padding_medium">14.0dip</dimen>
+
+    <dimen name="padding_small">10.0dip</dimen>
+
+    <dimen name="padding_xlarge">22.0dip</dimen>
+
+    <dimen name="padding_xsmall">8.0dip</dimen>
+
+    <dimen name="padding_xxlarge">26.0dip</dimen>
+
+    <dimen name="padding_xxxlarge">32.0dip</dimen>
+
+    <dimen name="piechart_icon_size">32.0dip</dimen>
+
+    <dimen name="popup_menu_item_icon_height">56.0dip</dimen>
+
+    <dimen name="popup_menu_item_text_height">48.0dip</dimen>
+
+    <dimen name="popup_menu_item_text_margin_left">48.0dip</dimen>
+
+    <dimen name="popup_menu_item_text_style">16.0sp</dimen>
+
+    <dimen name="popup_menu_item_width_2x">112.0dip</dimen>
+
+    <dimen name="popup_menu_item_width_3x">168.0dip</dimen>
+
+    <dimen name="popup_menu_item_width_4x">224.0dip</dimen>
+
+    <dimen name="popup_menu_item_width_5x">280.0dip</dimen>
+
+    <dimen name="popup_menu_item_width_base">56.0dip</dimen>
+
+    <dimen name="popup_menu_item_width_large">72.0dip</dimen>
+
+    <dimen name="preference_category_padding_start">0.0dip</dimen>
+
+    <dimen name="preference_icon_minWidth">0.0dip</dimen>
+
+    <dimen name="preference_seekbar_padding_end">22.0dip</dimen>
+
+    <dimen name="preference_seekbar_padding_start">0.0dip</dimen>
+
+    <dimen name="preference_seekbar_value_width">36.0dip</dimen>
+
+    <dimen name="radius_circle">10.0dip</dimen>
+
+    <dimen name="round_wallet_item">10.0dip</dimen>
+
+    <dimen name="section_div_height">20.0dip</dimen>
+
+    <dimen name="select_icon_indicator_background_width">48.0dip</dimen>
+
+    <dimen name="small_font_size">12.0sp</dimen>
+
+    <dimen name="smallest_movement_range_to_scroll">10.0dip</dimen>
+
+    <dimen name="smallest_touchable_view_size">48.0dip</dimen>
+
+    <dimen name="spacing_12">12.0dip</dimen>
+
+    <dimen name="spacing_13">13.0dip</dimen>
+
+    <dimen name="spacing_16">16.0dip</dimen>
+
+    <dimen name="spacing_16_to_28">16.0dip</dimen>
+
+    <dimen name="spacing_16_to_32">16.0dip</dimen>
+
+    <dimen name="spacing_24">24.0dip</dimen>
+
+    <dimen name="spacing_32">32.0dip</dimen>
+
+    <dimen name="spacing_48">48.0dip</dimen>
+
+    <dimen name="spacing_56">56.0dip</dimen>
+
+    <dimen name="spacing_56_to_88">56.0dip</dimen>
+
+    <dimen name="spacing_64">64.0dip</dimen>
+
+    <dimen name="spacing_72">72.0dip</dimen>
+
+    <dimen name="spacing_72_horizontal">72.0dip</dimen>
+
+    <dimen name="spacing_72_to_104">72.0dip</dimen>
+
+    <dimen name="spacing_72_to_88">72.0dip</dimen>
+
+    <dimen name="spacing_72_to_96">72.0dip</dimen>
+
+    <dimen name="spacing_large">24.0dip</dimen>
+
+    <dimen name="spacing_medium">16.0dip</dimen>
+
+    <dimen name="spacing_medium_horizontal">16.0dip</dimen>
+
+    <dimen name="spacing_progress_transaction_status">12.0dip</dimen>
+
+    <dimen name="spacing_small">8.0dip</dimen>
+
+    <dimen name="spacing_small_horizontal">8.0dip</dimen>
+
+    <dimen name="spacing_tiny">4.0dip</dimen>
+
+    <dimen name="spacing_xlarge">32.0dip</dimen>
+
+    <dimen name="spacing_xxlarge">40.0dip</dimen>
+
+    <item name="spacing_zero_horizontal" type="dimen">@dimen/spacing_medium_horizontal</item>
+
+    <dimen name="speed">10.0dip</dimen>
+
+    <dimen name="splash_logo_size">104.0dip</dimen>
+
+    <dimen name="splash_screen_app_name">28.0sp</dimen>
+
+    <dimen name="splash_screen_welcome_width">300.0dip</dimen>
+
+    <dimen name="splash_title_size">20.0dip</dimen>
+
+    <dimen name="splashscreen_welcome_height">260.0dip</dimen>
+
+    <dimen name="store__page__padding_top">0.0dip</dimen>
+
+
+    <dimen name="suggest_height">150.0dip</dimen>
+
+    <dimen name="system_statusbar_height">0.0dip</dimen>
+
+    <dimen name="system_statusbar_height_less">0.0dip</dimen>
+
+    <dimen name="text_single_line_full_width_height">56.0dip</dimen>
+
+    <dimen name="text_size">50.0sp</dimen>
+
+    <dimen name="text_size_card_title">24.0sp</dimen>
+
+    <dimen name="text_size_large">20.0sp</dimen>
+
+    <dimen name="text_size_main">16.0sp</dimen>
+
+    <dimen name="text_size_normal">14.0sp</dimen>
+
+    <dimen name="text_size_small">12.0sp</dimen>
+
+    <dimen name="text_size_title">30.0sp</dimen>
+
+    <dimen name="text_size_title_goal">34.0dip</dimen>
+
+    <dimen name="text_size_xlarge">24.0sp</dimen>
+
+    <dimen name="textsize_body">14.0dip</dimen>
+
+    <dimen name="textsize_caption">12.0dip</dimen>
+
+    <dimen name="textsize_display_1">34.0dip</dimen>
+
+    <dimen name="textsize_headline">24.0dip</dimen>
+
+    <dimen name="textsize_input">16.0dip</dimen>
+
+    <dimen name="textsize_subhead">16.0dip</dimen>
+
+    <dimen name="textsize_title">20.0dip</dimen>
+
+    <dimen name="tile_letter_font_size">17.0sp</dimen>
+
+    <dimen name="ttlm_default_corner_radius">4.0dip</dimen>
+
+    <dimen name="ttlm_default_elevation">2.0dip</dimen>
+
+    <dimen name="ttlm_default_padding">20.0dip</dimen>
+
+    <dimen name="ttlm_default_stroke_weight">0.0dip</dimen>
+
+    <dimen name="wallet_item_size">152.0dip</dimen>
+
+    <dimen name="web_image_size">120.0dip</dimen>
+
+    <dimen name="welcome_content">16.0sp</dimen>
+
+    <dimen name="welcome_content_min_height">96.0dip</dimen>
+
+    <dimen name="welcome_heading">24.0sp</dimen>
+
+    <dimen name="welcome_heading_margin_bottom">12.0dip</dimen>
+
+    <dimen name="welcome_images_margin_top">0.0dip</dimen>
+
+    <dimen name="welcome_images_portrait_height">400.0dip</dimen>
+
+    <dimen name="welcome_images_size">320.0dip</dimen>
+
+    <dimen name="welcome_text_margin_bottom">12.0dip</dimen>
+
+    <item name="welcome_text_margin_horizontal" type="dimen">@dimen/spacing_large</item>
+
+    <dimen name="welcome_text_margin_top">24.0dip</dimen>
+
+    <dimen name="widget_margin">0.0dip</dimen>
+
+    <item name="width_detail_screen" type="dimen">@dimen/match_parent_custom</item>
+
+    <dimen name="width_horizontal_line">1.0dip</dimen>
+
+    <dimen name="width_legend_view">43.0dip</dimen>
+
+    <dimen name="wight_change_log">320.0dip</dimen>
+
+    <dimen name="wrap_content_custom">-2.0px</dimen>
 </resources>

@@ -19,6 +19,8 @@ import com.example.t2m.moneytracker.MainActivity;
 import com.example.t2m.moneytracker.R;
 import com.example.t2m.moneytracker.dataaccess.IWalletsDAO;
 import com.example.t2m.moneytracker.dataaccess.WalletsDAOImpl;
+import com.example.t2m.moneytracker.sync.SyncActivity;
+import com.example.t2m.moneytracker.utils.SharedPrefs;
 import com.example.t2m.moneytracker.wallet.AddWalletActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -60,15 +62,24 @@ public class LoginActivity extends AppCompatActivity {
         updateUI(currentUser);
     }
 
+    private void goToSyncActivity() {
+        Intent intent = new Intent(LoginActivity.this,SyncActivity.class);
+        startActivity(intent);
+    }
+
     private void updateUI(FirebaseUser currentUser) {
         if (currentUser !=null) {
             // check wallet
             IWalletsDAO iWalletsDAO = new WalletsDAOImpl(this);
+            boolean not_synced = SharedPrefs.getInstance().get(SharedPrefs.KEY_PULL_TIME,0) == 0;
             if(iWalletsDAO.hasWallet(currentUser.getUid()) ) {
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
             }
-            else  {
+            else if (not_synced) {
+                goToSyncActivity();
+            }
+            else {
                 Intent intent = new Intent(LoginActivity.this, AddWalletActivity.class);
                 startActivity(intent);
             }

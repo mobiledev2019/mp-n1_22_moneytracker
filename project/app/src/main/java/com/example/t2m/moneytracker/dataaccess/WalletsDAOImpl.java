@@ -8,7 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 import com.example.t2m.moneytracker.model.Wallet;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 public class WalletsDAOImpl implements IWalletsDAO {
 
@@ -32,6 +34,8 @@ public class WalletsDAOImpl implements IWalletsDAO {
     public static final String COLUMN_WALLET_ICON = "icon";
     public static final String COLUMN_WALLET_USER_ID = "userId";
 
+    public static final String COLUMN_TIME_STAMP = "timestamp";
+
     MoneyTrackerDBHelper dbHelper;
     public WalletsDAOImpl(Context context) {
         dbHelper = new MoneyTrackerDBHelper(context);
@@ -39,7 +43,7 @@ public class WalletsDAOImpl implements IWalletsDAO {
 
     // Wallet data access
 
-    public Wallet getWalletById(int id) {
+    public Wallet getWalletById(long id) {
         Cursor data = getWalletDataById(id);
         if (data != null && data.getCount() > 0) {
             data.moveToFirst();
@@ -71,16 +75,20 @@ public class WalletsDAOImpl implements IWalletsDAO {
     public boolean insertWallet(Wallet wallet) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
+        long id = wallet.getWalletId();
+        if(id <= 0)
+             id= UUID.randomUUID().getMostSignificantBits() & Long.MAX_VALUE;
+        values.put(COLUMN_WALLET_ID,id);
         values.put(COLUMN_WALLET_NAME, wallet.getWalletName());
         values.put(COLUMN_WALLET_BALANCE, wallet.getCurrentBalance());
         values.put(COLUMN_WALLET_CURRENCY, wallet.getCurrencyCode());
         values.put(COLUMN_WALLET_TYPE, wallet.getWalletType());
         values.put(COLUMN_WALLET_ICON, wallet.getImageSrc());
         values.put(COLUMN_WALLET_USER_ID, wallet.getUserUID());
-        int id = (int) db.insert(TABLE_WALLET_NAME, null, values);
+        db.insert(TABLE_WALLET_NAME, null, values);
         db.close();
-        if (id == -1) return false;
         wallet.setWalletId(id);
+        updateTimeStamp(id, com.google.firebase.Timestamp.now().getSeconds());
         return true;
     }
 
@@ -95,10 +103,12 @@ public class WalletsDAOImpl implements IWalletsDAO {
         values.put(COLUMN_WALLET_USER_ID, wallet.getUserUID());
         db.update(TABLE_WALLET_NAME, values, COLUMN_WALLET_ID + " = ?", new String[]{String.valueOf(wallet.getWalletId())});
         db.close();
+
+        updateTimeStamp(wallet.getWalletId(), com.google.firebase.Timestamp.now().getSeconds());
         return true;
     }
 
-    public boolean deleteWallet(int walletId) {
+    public boolean deleteWallet(long walletId) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.delete(TABLE_WALLET_NAME, COLUMN_WALLET_ID + " = ?", new String[]{String.valueOf(walletId)});
         db.close();
@@ -113,7 +123,7 @@ public class WalletsDAOImpl implements IWalletsDAO {
         return cursor;
     }
 
-    private Cursor getWalletDataById(int id) {
+    private Cursor getWalletDataById(long id) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String query = "SELECT * FROM " + TABLE_WALLET_NAME +
                 " WHERE " + COLUMN_WALLET_ID + " = ?";
@@ -122,7 +132,7 @@ public class WalletsDAOImpl implements IWalletsDAO {
     }
 
     private Wallet getWalletFromData(Cursor data) {
-        int id = data.getInt(data.getColumnIndex(COLUMN_WALLET_ID));
+        long id = data.getLong(data.getColumnIndex(COLUMN_WALLET_ID));
         String name = data.getString(data.getColumnIndex(COLUMN_WALLET_NAME));
         float balance = data.getFloat(data.getColumnIndex(COLUMN_WALLET_BALANCE));
         String currency = data.getString(data.getColumnIndex(COLUMN_WALLET_CURRENCY));
@@ -133,5 +143,15 @@ public class WalletsDAOImpl implements IWalletsDAO {
         return new Wallet(id, name, balance, currency, type, icon, userId);
     }
 
+
+    public void updateTimeStamp(long walletId, long timestamp) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        String query = "UPDATE " + TABLE_WALLET_NAME
+                + " SET " + COLUMN_TIME_STAMP + " = " + timestamp
+                + " WHERE " + COLUMN_WALLET_ID + " = " + walletId;
+
+        db.execSQL(query);
+        db.close();
+    }
     //
 }

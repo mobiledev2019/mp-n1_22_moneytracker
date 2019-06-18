@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/btnIncome"
+    android:text="@string/income_category_title"
+    android:gravity="center"
+    android:textAllCaps="false"
+    android:textSize="20dp"
+    android:background="@null"
+    />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnExpense"
+        android:text="@string/expense_category_title"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:background="@null"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnLoan"
+        android:text="@string/chovay_trano"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:background="@null"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnBorrowing"
+        android:text="@string/divay_thuno"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:background="@null"
+        />
+</LinearLayout>

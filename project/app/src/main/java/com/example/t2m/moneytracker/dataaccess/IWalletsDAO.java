@@ -13,9 +13,11 @@ public interface IWalletsDAO {
 
     public boolean insertWallet(Wallet wallet);
     public boolean updateWallet(Wallet wallet) ;
-    public boolean deleteWallet(int walletId) ;
-    public Wallet getWalletById(int id);
+    public boolean deleteWallet(long walletId) ;
+    public Wallet getWalletById(long id);
     public boolean hasWallet(String userId);
     public List<Wallet> getAllWalletByUser(String userId);
+
+    public void updateTimeStamp(long walletId, long timestamp);
 
 }

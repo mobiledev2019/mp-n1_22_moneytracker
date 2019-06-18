@@ -55,46 +55,49 @@ public class TransactionTabFragment extends Fragment {
     private TransactionPagerAdapter mAdapter;
 
     private FloatingActionButton mFabAddTransaction;
-    List<Pair<String,Fragment>> mTabFragment;
+    List<Pair<String, Fragment>> mTabFragment;
     List<Transaction> mListTransaction;
     ITransactionsDAO iTransactionsDAO;
     Wallet mCurrentWallet = null;
 
     DateUtils dateUtils;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_transaction_tab,container,false);
+        View view = inflater.inflate(R.layout.activity_transaction_tab, container, false);
         mTabLayout = view.findViewById(R.id.tab_layout);
         mViewPager = view.findViewById(R.id.page_view);
         mFabAddTransaction = view.findViewById(R.id.fab_add_transaction);
-        addEvents();
+
         dateUtils = new DateUtils();
         mTabFragment = new ArrayList<>();
         mCurrentWallet = WalletsManager.getInstance(this.getContext()).getCurrentWallet();
         iTransactionsDAO = new TransactionsDAOImpl(this.getContext());
         mListTransaction = iTransactionsDAO.getAllTransactionByWalletId(mCurrentWallet.getWalletId());
-        mAdapter = new TransactionPagerAdapter(getFragmentManager(),mTabFragment);
+        mAdapter = new TransactionPagerAdapter(getChildFragmentManager(), mTabFragment);
 
         mViewPager.setAdapter(mAdapter);
         mTabLayout.setupWithViewPager(mViewPager);
-        new loadTabs().execute();
+
+        addEvents();
+
+        //new loadTabs(getActivity()).execute();
         return view;
     }
 
     private void scrollToCurrentMonth() {
-        for(int  i = mTabFragment.size()- 1; i >= 0;--i) {
-            if(mTabFragment.get(i).first.compareTo(getString(R.string.current_month)) == 0) {
-                scrollToTabIndex(i,0.0f,true);
+        for (int i = mTabFragment.size() - 1; i >= 0; --i) {
+            if (mTabFragment.get(i).first.compareTo(getString(R.string.current_month)) == 0) {
+                scrollToTabIndex(i, 0.0f, true);
                 break;
             }
         }
     }
 
-    private void scrollToTabIndex(int index,float positionOffset,boolean updateSelectedText) {
-        mTabLayout.setScrollPosition(index,positionOffset,updateSelectedText);
-        mViewPager.setCurrentItem(index);
-
+    private void scrollToTabIndex(int index, float positionOffset, boolean updateSelectedText) {
+        mTabLayout.setScrollPosition(index, positionOffset, updateSelectedText);
+        mViewPager.setCurrentItem(index, true);
     }
 
 
@@ -108,57 +111,101 @@ public class TransactionTabFragment extends Fragment {
         mFabAddTransaction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(),AddTransactionActivity.class);
-                startActivityForResult(intent,FAB_ADD_TRANSACTION_REQUEST_CODE);
+                Intent intent = new Intent(getContext(), AddTransactionActivity.class);
+                startActivityForResult(intent, FAB_ADD_TRANSACTION_REQUEST_CODE);
+            }
+        });
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+                mAdapter.getItem(i);
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
             }
         });
     }
 
-    private void addTabs() {
-        MTDate currentDate = new MTDate();
-        int currentYear = currentDate.getYear();
-        int currentMonth = currentDate.getMonth();
-        int year,month = 0;
-        for (year = 2017; year <= currentYear; ++year) {
-            for( month = 0; month < 12 ; ++month ) {
-                if(year == currentYear && month > currentMonth) break;
-                MTDate mtDate = new MTDate(year,month,1);
-                DateRange dateRange = new DateRange(
-                        mtDate.firstDayOfMonth().setTimeToBeginningOfDay().toDate(),
-                        mtDate.lastDayOfMonth().setTimeToEndOfDay().toDate());
-                addTab(dateRange);
+    private void addTabs(DateRange dateRange) {
+
+        int year, month = 0;
+        int from_month = dateRange.getDateFrom().getMonth();
+        int from_year = dateRange.getDateFrom().getYear();
+        int to_month = dateRange.getDateTo().getMonth();
+        int to_year = dateRange.getDateTo().getYear();
+
+        List<DateRange> periods = new ArrayList<>();
+        for (year = from_year; year <= to_year; ++year) {
+            for (month = 0; month < 12; ++month) {
+                if (year == from_year && month < from_month) continue;
+                if (year == to_year && month > to_month) break;
+                MTDate firstDay = new MTDate(year, month, 1).firstDayOfMonth().setTimeToBeginningOfDay();
+                MTDate lastDay = new MTDate(year, month, 1).lastDayOfMonth().setTimeToEndOfDay();
+                DateRange period = new DateRange(firstDay, lastDay);
+                addTab(period);
             }
         }
-        if(month == 12) {
+        if (month == 12) {
             month = 0;
             ++year;
         }
-        MTDate mtDate = new MTDate(year,month,1);
-        DateRange dateRange = new DateRange(mtDate.firstDayOfMonth().toDate(),mtDate.lastDayOfMonth().toDate());
-        addTab(dateRange);
+        MTDate firstFuture = new MTDate(year, month, 1).firstDayOfMonth();
+        MTDate lastFuture = new MTDate(year + 100, month, 1).lastDayOfMonth();
+        DateRange period = new DateRange(firstFuture, lastFuture);
+        addTab(period);
     }
 
     private void addTab(DateRange dateRange) {
-        List<Transaction> transactions = filterTransactions(dateRange,mListTransaction);
+        List<Transaction> transactions = filterTransactions(dateRange, mListTransaction);
 
-        String title = getTitle(dateRange.getDateFrom());
-        Date currentDate = Calendar.getInstance().getTime();
-        Fragment fragment =  TransactionListFragment.newInstance(transactions);
-        mTabFragment.add(new Pair<>(title,fragment));
+        String title = getTitle(dateRange.getDateFrom().toDate());
+//        boolean isNeedAdd = true;
+//        for (Pair<String, Fragment> tab : mTabFragment) {
+//            if (tab.first.equals(title)) {
+//                ((TransactionListFragment) tab.second).setItems(transactions);
+//                isNeedAdd = false;
+//                break;
+//            }
+//        }
+//        if (isNeedAdd) {
+            Fragment fragment = TransactionListFragment.newInstance(transactions);
+            mTabFragment.add(new Pair<>(title, fragment));
+            //       }
 
+    }
+
+    // lay title ngay theo range
+    private String getTitle(DateRange range) {
+        MTDate mtDate = range.getDateFrom();
+        String title = String.format("%d/%d", mtDate.getMonth() + 1, mtDate.getYear());
+        MTDate firstDayOfMonth = new MTDate().firstDayOfMonth().setTimeToBeginningOfDay();
+        MTDate lastDayOfMonth = new MTDate().lastDayOfMonth().setTimeToEndOfDay();
+        DateRange currentMonth = new DateRange(firstDayOfMonth, lastDayOfMonth);
+        if (dateUtils.isDateRangeContainDate(currentMonth, mtDate)) {
+            title = getString(R.string.current_month);
+        } else if (dateUtils.isFutureDate(currentMonth.getDateTo(), mtDate)) {
+            title = getString(R.string.future_transactions);
+        }
+        return title;
     }
 
     private String getTitle(Date date) {
         MTDate mtDate = new MTDate(date);
-        String title = String.format("%d/%d",mtDate.getMonth() + 1,mtDate.getYear());
-        MTDate currentDate = new MTDate();
-        DateRange dateRange = new DateRange(
-                currentDate.firstDayOfMonth().setTimeToBeginningOfDay().toDate(),
-                currentDate.lastDayOfMonth().setTimeToEndOfDay().toDate());
-        if(dateUtils.isDateRangeContainDate(dateRange,date)) {
+        String title = String.format("%d/%d", mtDate.getMonth() + 1, mtDate.getYear());
+        MTDate firstDayOfMonth = new MTDate().firstDayOfMonth().setTimeToBeginningOfDay();
+        MTDate lastDayOfMonth = new MTDate().lastDayOfMonth().setTimeToEndOfDay();
+        DateRange currentMonth = new DateRange(firstDayOfMonth, lastDayOfMonth);
+        if (dateUtils.isDateRangeContainDate(currentMonth, mtDate)) {
             title = getString(R.string.current_month);
-        }
-        else if (dateUtils.isFutureDate(dateRange.getDateTo(),date)) {
+        } else if (dateUtils.isFutureDate(currentMonth.getDateTo(), mtDate)) {
             title = getString(R.string.future_transactions);
         }
         return title;
@@ -166,8 +213,8 @@ public class TransactionTabFragment extends Fragment {
 
     private List<Transaction> filterTransactions(DateRange dateRange, List<Transaction> transactions) {
         List<Transaction> filter = new ArrayList<>();
-        for(Transaction t : transactions) {
-            if(dateUtils.isDateRangeContainDate(dateRange,t.getTransactionDate())) {
+        for (Transaction t : transactions) {
+            if (dateUtils.isDateRangeContainDate(dateRange, t.getTransactionDate())) {
                 filter.add(t);
             }
         }
@@ -177,26 +224,21 @@ public class TransactionTabFragment extends Fragment {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == FAB_ADD_TRANSACTION_REQUEST_CODE) {
-            if(resultCode == Activity.RESULT_OK) {
+        Log.d(TransactionTabFragment.class.getSimpleName(), "On Activity Result");
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == FAB_ADD_TRANSACTION_REQUEST_CODE) {
+            if (resultCode == Activity.RESULT_OK) {
                 Transaction transaction = (Transaction) data.getSerializableExtra(AddTransactionActivity.EXTRA_TRANSACTION);
-                this.addTransaction(transaction);
+                mListTransaction.add(transaction);
             }
         }
     }
 
-
-    public void addTransaction(Transaction transaction) {
-        mListTransaction.add(transaction);
-        String title = getTitle(transaction.getTransactionDate());
-        for(Pair<String,Fragment> tab : mTabFragment) {
-            if(title.compareTo(tab.first) ==0) {
-                if(tab.second instanceof TransactionListFragment) {
-                    ((TransactionListFragment)tab.second).add(transaction);
-
-                }
-            }
-        }
+    @Override
+    public void onResume() {
+        Log.d(TransactionTabFragment.class.getSimpleName(), "On Resume");
+        super.onResume();
+        new loadTabs(this.getActivity()).execute();
     }
 
     // =====================================================
@@ -204,13 +246,20 @@ public class TransactionTabFragment extends Fragment {
 
     private class loadTabs extends AsyncTask<Void, Void, Void> {
 
+        public loadTabs(Activity activity) {
+            this.activity = activity;
+        }
+
+        private Activity activity;
+
         @Override
         protected void onPreExecute() {
-            mDialog = new Dialog(getActivity());
+            mDialog = new Dialog(activity);
             // chu y phai dat truoc setcontentview
             mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             mDialog.setContentView(R.layout.loading_view);
-
+            mListTransaction.clear();
+            mListTransaction.addAll(iTransactionsDAO.getAllTransactionByWalletId(mCurrentWallet.getWalletId()));
             mDialog.setCancelable(false);
             mDialog.show();
         }
@@ -218,29 +267,34 @@ public class TransactionTabFragment extends Fragment {
         protected Void doInBackground(Void... unused) {
 
             // su dung phuong thuc de update lai adapter
-            getActivity().runOnUiThread(runnableUdapteAdapter);
+            activity.runOnUiThread(runnableUpdateAdapter);
 
             return (null);
         }
 
         protected void onPostExecute(Void unused) {
+
             mDialog.dismiss();
             scrollToCurrentMonth();
         }
     }
 
-    private Runnable runnableUdapteAdapter = new Runnable() {
+    private Runnable runnableUpdateAdapter = new Runnable() {
 
         @Override
         public void run() {
             // thuc hien update lai adapter
             try {
                 mTabFragment.clear();
-                addTabs();
+                DateRange dateRange = new DateRange(new MTDate(2018, 0, 1).firstDayOfMonth().setTimeToBeginningOfDay(),
+                        new MTDate());
+                addTabs(dateRange);
                 mAdapter.updateValues(mTabFragment);
+
 
             } catch (Exception e) {
                 // TODO: handle exception
+                Log.d(TransactionTabFragment.class.getSimpleName(), "Update adapter failed");
             }
 
         }

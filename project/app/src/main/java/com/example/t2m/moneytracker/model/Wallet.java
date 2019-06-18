@@ -1,7 +1,14 @@
 package com.example.t2m.moneytracker.model;
 
+import android.util.Log;
+
+import com.google.firebase.Timestamp;
+import com.google.firebase.firestore.FieldValue;
+
 import java.io.Serializable;
 import java.util.Currency;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Wallet implements Serializable {
 
@@ -10,7 +17,7 @@ public class Wallet implements Serializable {
     public static final int GOAL_WALLET = 3;
     public static final int LINKED_WALLET = 4;
 
-    private int walletId;
+    private long walletId;
     private int walletType;
     private String walletName;
     private float currentBalance;
@@ -29,7 +36,7 @@ public class Wallet implements Serializable {
     public Wallet() {
     }
 
-    public Wallet(int walletId, String walletName, float currentBalance, String currencyCode, int walletType, String imageSrc,String userUID) {
+    public Wallet(long walletId, String walletName, float currentBalance, String currencyCode, int walletType, String imageSrc,String userUID) {
         this.walletId = walletId;
         this.walletName = walletName;
         this.currentBalance = currentBalance;
@@ -49,11 +56,11 @@ public class Wallet implements Serializable {
         this.userUID = builder.userUID;
     }
 
-    public int getWalletId() {
+    public long getWalletId() {
         return walletId;
     }
 
-    public void setWalletId(int walletId) {
+    public void setWalletId(long walletId) {
         this.walletId = walletId;
     }
 
@@ -97,8 +104,33 @@ public class Wallet implements Serializable {
         this.imageSrc = imageSrc;
     }
 
+    public Map<String,Object> toMap() {
+        Map<String,Object> values = new HashMap<>();
+
+        values.put("_id", walletId);
+        values.put("uid",userUID);
+        values.put("name",walletName);
+        values.put("balance",currentBalance);
+        values.put("currencyCode",currencyCode);
+        values.put("type",walletType);
+        values.put("logo",imageSrc);
+        values.put("timestamp",Timestamp.now());
+        return values;
+    }
+
+    public static Wallet fronMap(Map<String,Object> data) {
+        WalletBuilder builder = new WalletBuilder()
+                .setWalletId((Long) data.get("_id"))
+                .setUserUID((String) data.get("uid"))
+                .setWalletName((String) data.get("name"))
+                .setCurrentBalance(((Double) data.get("balance")).floatValue())
+                .setCurrencyCode((String) data.get("currencyCode"))
+                .setWalletType(((Long) data.get("type")).intValue())
+                .setImageSrc((String) data.get("logo"));
+        return builder.build();
+    }
     public static class WalletBuilder {
-        private int walletId;
+        private long walletId;
         private String walletName;
         private float currentBalance;
         private String currencyCode;
@@ -109,7 +141,7 @@ public class Wallet implements Serializable {
         public WalletBuilder() {
         }
 
-        public WalletBuilder setWalletId(int walletId) {
+        public WalletBuilder setWalletId(long walletId) {
             this.walletId = walletId;
             return this;
         }

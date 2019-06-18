@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/viewdetail_progress_amount"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/spacing_medium">
+
+    <ImageView
+        android:id="@+id/icon_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/spacing_16_to_28"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_currency"
+        android:visibility="invisible" />
+
+    <com.example.t2m.moneytracker.view.CurrencyTextView
+        android:id="@+id/txt_budget_category_detail_num_budget"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/spacing_xlarge"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:layout_marginRight="@dimen/spacing_medium"
+        android:layout_toRightOf="@id/icon_amount" />
+
+
+
+    <RelativeLayout
+        android:id="@+id/spent_left_group"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_budget_category_detail_num_budget"
+        android:layout_alignLeft="@id/txt_budget_category_detail_num_budget"
+        android:layout_alignRight="@id/txt_budget_category_detail_num_budget"
+        android:layout_marginTop="@dimen/spacing_medium">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/left_group"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_budget_category_detail_spent"
+                style="@style/Base.TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/budget_spent" />
+
+            <com.example.t2m.moneytracker.view.CurrencyTextView
+                android:id="@+id/txt_budget_category_detail_num_spent"
+                style="@style/Base.TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTextPrimary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/left_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_budget_category_detail_left"
+                style="@style/Base.TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/transaction_detail_cashback_left" />
+
+            <com.example.t2m.moneytracker.view.CurrencyTextView
+                android:id="@+id/txt_budget_category_detail_num_left"
+                style="@style/Base.TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTextPrimary" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_budget_category_detail"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spent_left_group"
+        android:layout_alignLeft="@id/txt_budget_category_detail_num_budget"
+        android:layout_alignRight="@id/txt_budget_category_detail_num_budget"
+        android:layout_marginTop="@dimen/spacing_small" />
+
+
+    </RelativeLayout>

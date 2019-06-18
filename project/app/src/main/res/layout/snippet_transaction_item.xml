@@ -11,7 +11,9 @@
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="8dp"
-        android:contentDescription="logo" />
+        android:contentDescription="logo"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="8dp" />
     <TextView
         android:id="@+id/text_transaction_label"
         android:layout_width="wrap_content"
@@ -20,7 +22,9 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:layout_toRightOf="@+id/image_transaction_item"
+        android:layout_marginLeft="8dp" />
     <TextView
         android:id="@+id/text_transaction_note"
         android:layout_width="wrap_content"
@@ -30,8 +34,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="8dp"
-        android:textSize="12sp" />
-    <TextView
+        android:textSize="12sp"
+        android:layout_toRightOf="@+id/image_transaction_item"
+        android:layout_marginLeft="8dp" />
+    <com.example.t2m.moneytracker.view.CurrencyTextView
         android:id="@+id/text_item_money_trading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,7 +45,9 @@
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:layout_marginEnd="8dp"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="8dp" />
 
 
 </RelativeLayout>

@@ -10,6 +10,8 @@ public class SharedPrefs {
     private static final String PREFS_NAME = "MoneyTrackerSharedPrefs";
     public static final String LANGUAGE = "langauge";
     public static final String KEY_IS_FIRST_TIME = "moneytracker.sharedprefs.key.is_first_time";
+    public static final String KEY_PUSH_TIME = "moneytracker.sharedprefs.key.push_time";
+    public static final String KEY_PULL_TIME = "moneytracker.sharedprefs.key.pull_time";
     private static SharedPrefs mInstance;
     private SharedPreferences mSharedPreferences;
 

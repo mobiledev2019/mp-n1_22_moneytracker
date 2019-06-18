@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/viewdetail_date"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone">
+
+    <ImageView
+        android:id="@+id/icon_calendar"
+        android:layout_width="@dimen/icon_size_small"
+        android:layout_height="@dimen/icon_size_small"
+        android:layout_marginLeft="@dimen/spacing_16_to_28"
+        android:layout_marginTop="12.0dip"
+        android:src="@drawable/ic_today" />
+
+    <TextView
+        android:id="@+id/date"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/spacing_xlarge"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:layout_marginRight="@dimen/spacing_medium"
+        android:layout_toRightOf="@id/icon_calendar" />
+
+    <TextView
+        android:id="@+id/date_info"
+        style="@style/TextAppearance.AppCompat.Caption"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date"
+        android:layout_alignLeft="@id/date"
+        android:layout_alignRight="@id/date"
+        android:layout_marginBottom="12.0dip"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <RelativeLayout android:orientation="vertical"
+            android:background="@drawable/selector_listview_one"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+            <LinearLayout android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="5.0dip"
+                android:paddingBottom="5.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <ImageView android:layout_width="50.0dip"
+                    android:layout_height="50.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:src="@drawable/calendar"
+                    android:contentDescription="@string/ContentDescriptionImageNull"
+                    android:id="@+id/imageview_calendar" />
+                <LinearLayout android:orientation="vertical"
+                    android:layout_width="140dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_height="wrap_content">
+                    <TextView android:id="@+id/txtweekdays0"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextViewCurrentAccountBlue"
+                        android:text="Thứ sáu" />
+                    <TextView android:id="@+id/txtThu"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/FormEditValue"
+                        android:text="Thu:" />
+                    <TextView android:id="@+id/txtChi"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/FormEditTitle"
+                        android:text="Chi:" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical"
+                    android:layout_width="100dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="#e204ff"
+                        android:text="" />
+                    <TextView android:id="@+id/txtthu0"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="#e204ff"
+                        android:text="Thu:fdfsd" />
+                    <TextView android:id="@+id/txtchi0"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/FormEditValue"
+                        android:text="chi" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center">
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                android:layout_marginTop="23dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="24dp"
+                android:textSize="18dp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="1"
+                android:id="@+id/textViewLich0" />
+        </RelativeLayout>
+    </LinearLayout>
+    <View
+        android:background="@color/Line"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginLeft="1.0dip"
+        android:layout_marginRight="1.0dip"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <RelativeLayout android:orientation="vertical"
+            android:background="@drawable/selector_listview_one"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <LinearLayout android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="5.0dip"
+                android:paddingBottom="5.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <ImageView android:layout_width="50.0dip"
+                    android:layout_height="50.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:src="@drawable/calendar"
+                    android:contentDescription="@string/ContentDescriptionImageNull"
+                    android:id="@+id/imageview_calendar0" />
+                <LinearLayout android:orientation="vertical"
+                    android:layout_width="140dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/txtweekdays1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextViewCurrentAccountBlue"
+                        android:text="Thứ sáu" />
+                    <TextView android:id="@+id/txtThu1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/FormEditValue"
+                        android:text="Thu:" />
+                    <TextView android:id="@+id/txtChi1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/FormEditTitle"
+                        android:text="Chi:" />
+                </LinearLayout>
+
+                <LinearLayout android:orientation="vertical"
+                    android:layout_width="140dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="#e204ff"
+                        android:text="" />
+                    <TextView android:id="@+id/txtthu1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="#e204ff"
+                        android:text="Thu:fdfsd" />
+                    <TextView android:id="@+id/txtchi1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/FormEditValue"
+                        android:text="chi" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center">
+                    <ImageView
+
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/disclosure"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="23dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="24dp"
+                android:textSize="18dp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="7"
+                android:id="@+id/textViewLich1" />
+        </RelativeLayout>
+    </LinearLayout>
+    <View android:id="@+id/lnRelation"
+        android:background="@color/Line"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginLeft="1.0dip"
+        android:layout_marginRight="1.0dip"/>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <RelativeLayout android:orientation="vertical"
+            android:background="@drawable/selector_listview_one"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+            <LinearLayout android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="5.0dip"
+                android:paddingBottom="5.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <ImageView android:layout_width="50.0dip"
+                    android:layout_height="50.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:src="@drawable/calendar"
+                    android:contentDescription="@string/ContentDescriptionImageNull"
+                    android:id="@+id/imageview_calendar2" />
+                <LinearLayout android:orientation="vertical"
+                    android:layout_width="140dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/txtweekdays2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextViewCurrentAccountBlue"
+                        android:text="Thứ sáu" />
+                    <TextView android:id="@+id/txtThu2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/FormEditValue"
+                        android:text="Thu:" />
+                    <TextView android:id="@+id/txtChi2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/FormEditTitle"
+                        android:text="Chi:" />
+                </LinearLayout>
+
+                <LinearLayout android:orientation="vertical"
+                    android:layout_width="140dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="#e204ff"
+                        android:text="" />
+                    <TextView android:id="@+id/txtthu2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="#e204ff"
+                        android:text="Thu:fdfsd" />
+                    <TextView android:id="@+id/txtchi2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/FormEditValue"
+                        android:text="chi" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center">
+                    <ImageView
+
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/disclosure"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="23dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="24dp"
+                android:textSize="18dp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="31"
+                android:id="@+id/textViewLich2" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <RelativeLayout android:orientation="vertical"
+            android:background="@drawable/selector_listview_one"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <LinearLayout android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="5.0dip"
+                android:paddingBottom="5.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <ImageView android:layout_width="50.0dip"
+                    android:layout_height="50.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:src="@drawable/calendar"
+                    android:contentDescription="@string/ContentDescriptionImageNull"
+                    android:id="@+id/imageview_calendartruoc" />
+                <LinearLayout android:orientation="vertical"
+                    android:layout_width="140dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/txtweekdaystruoc"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextViewCurrentAccountBlue"
+                        android:text="Tháng trước" />
+                    <TextView android:id="@+id/txtThutruoc"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/FormEditValue"
+                        android:text="Thu:" />
+                    <TextView android:id="@+id/txtChitruoc"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/FormEditTitle"
+                        android:text="Chi:" />
+                </LinearLayout>
+
+                <LinearLayout android:orientation="vertical"
+                    android:layout_width="140dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="#e204ff"
+                        android:text="" />
+                    <TextView android:id="@+id/txtthuTruoc"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="#e204ff"
+                        android:text="Thu:fdfsd" />
+                    <TextView android:id="@+id/txtchiTruoc"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/FormEditValue"
+                        android:text="chi" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center">
+                    <ImageView
+
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/disclosure"/>
+
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                android:layout_marginTop="23dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="24dp"
+                android:textSize="18dp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="31"
+                android:id="@+id/textViewLichTruoc" />
+        </RelativeLayout>
+    </LinearLayout>
+    <View android:id="@+id/lnRelation1"
+        android:background="@color/Line"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginLeft="1.0dip"
+        android:layout_marginRight="1.0dip"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <RelativeLayout android:orientation="vertical"
+            android:background="@drawable/selector_listview_one"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            >
+            <LinearLayout android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="5.0dip"
+                android:paddingBottom="5.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <ImageView android:layout_width="50.0dip"
+                    android:layout_height="50.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:src="@drawable/calendar"
+                    android:contentDescription="@string/ContentDescriptionImageNull"
+                    android:id="@+id/imageview_calendar3" />
+                <LinearLayout android:orientation="vertical"
+                    android:layout_width="140dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/txtweekdays3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextViewCurrentAccountBlue"
+                        android:text="Thứ sáu" />
+                    <TextView android:id="@+id/txtThu3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/FormEditValue"
+                        android:text="Thu:" />
+                    <TextView android:id="@+id/txtChi3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/FormEditTitle"
+                        android:text="Chi:" />
+                </LinearLayout>
+
+                <LinearLayout android:orientation="vertical"
+                    android:layout_width="140dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="#e204ff"
+                        android:text="" />
+                    <TextView android:id="@+id/txtthu3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="#e204ff"
+                        android:text="Thu:fdfsd" />
+                    <TextView android:id="@+id/txtchi3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/FormEditValue"
+                        android:text="chi" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center">
+                    <ImageView
+
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/disclosure"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="28dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="18dp"
+                android:textSize="17dp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="365"
+                android:id="@+id/textViewLich3" />
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <com.andexert.library.RippleView
+
+            android:gravity="center"
+            android:id="@+id/lnload"
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip"
+            android:layout_margin="10.0dip"
+            android:layout_marginTop="30dp"
+            android:clickable="true"
+            android:layout_weight="1.0"
+            android:background="@drawable/selector_button_green"
+            rv_centered="true">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView android:layout_width="25.0dip"
+                    android:layout_height="20.0dip"
+                    android:src="@drawable/save_icon_button"
+                    android:contentDescription="@string/NoImage"
+                    />
+                <TextView android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="load"
+                    style="@style/TextViewStyle"
+                    />
+            </LinearLayout>
+        </com.andexert.library.RippleView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <TextView
+            android:id="@+id/textchitieu"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="#878787"
+            android:text="tháng này chi tiêu hợp lý !"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+</LinearLayout>

@@ -4,8 +4,8 @@
     <string name="title_activity_main_drawer" translatable="false">Main Drawer Activity</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
-    <string name="nav_header_title" translatable="false">Android Studio</string>
-    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_title" translatable="false">User Name</string>
+    <string name="nav_header_subtitle" translatable="false">example@email.com</string>
     <string name="nav_header_desc" translatable="false">Navigation header</string>
     <string name="action_settings">Cài đặt</string>
     <string name="title_activity_main" translatable="false">Main Activity</string>
@@ -54,6 +54,7 @@
     <string name="transaction_ledger">Sổ giao dịch</string>
     <string name="report">Báo cáo</string>
     <string name="scheduling">Lập kế hoạch</string>
+    <string name="search">Tìm kiếm</string>
     <string name="communicate">Giao tiếp</string>
     <string name="share">Chia sẻ</string>
     <string name="send">Gửi</string>
@@ -91,6 +92,8 @@
     <string name="income_category_title">Khoản thu</string>
     <string name="expense_category_title">Khoản chi</string>
     <string name="debt_loan_category_title">Nợ/Cho vay</string>
+    <string name="chovay_trano">Cho vay/Trả nợ</string>
+    <string name="divay_thuno">Đi vay/Thu nợ</string>
 
     <!-- transaction list periods -->
     <string name="all_transaction">Tất cả giao dịch</string>
@@ -118,5 +121,71 @@
     <string name="delete">Xóa</string>
     <string name="transaction_detail">Chi tiết hóa đơn</string>
     <string name="no_write_note">Không có ghi chú</string>
+    <string name="select_date">Chọn ngày</string>
+    <string name="select_date_start">Ngày bắt đầu</string>
+    <string name="select_date_end">Ngày kết thúc</string>
+    <string name="no_transaction">Không có giao dịch</string>
 
+    <string-array name="search_array">
+        <item>Tìm kiếm theo ngày</item>
+        <item>Tìm kiếm theo thời gian</item>
+    </string-array>
+    <string name="search_by_date">Tìm kiếm theo ngày</string>
+    <string name="search_by_time">Tìm kiếm theo thời gian</string>
+    <string name="search_by_items">Tìm kiếm theo khoản mục</string>
+
+    <string name="budget">Ngân sách</string>
+    <string name="periodic_transaction">Giao dịch định kỳ</string>
+    <string name="remain">Còn lại</string>
+    <string name="goal">Số tiền</string>
+    <string name="create_budget_time_range">Khoảng thời gian</string>
+    <string name="select_wallet">Chọn ví</string>
+    <string name="budget_repeat">Lặp lại ngân sách này</string>
+    <string name="budget_detail_recommended_daily_spending">Nên chi hàng ngày</string>
+    <string name="budget_detail_projected_spending">Dự kiến chi tiêu</string>
+    <string name="budget_detail_actual_daily_spending">Thực tế chi tiêu hàng ngày</string>
+    <string name="notification_budget_turn_off">Tắt thông báo</string>
+    <string name="notification_budget_turn_on">Bật thông báo</string>
+    <string name="budget_detail_list_transactions_title">Danh Sách Giao Dịch</string>
+    <string name="budget_spent">Đã chi</string>
+    <string name="transaction_detail_cashback_left">Còn lại</string>
+    <string name="transaction_detail_cashback_over">Bội chi</string>
+    <string name="from">Ngày bắt đầu</string>
+    <string name="to">Ngày kết thúc</string>
+    <string name="start" translatable="false">Start</string>
+    <string name="end" translatable="false">End</string>
+
+
+    <string name="thismonth">Tháng này</string>
+    <string name="thisquarter">Quý này</string>
+    <string name="thisweek">Tuần này</string>
+    <string name="thisyear">Năm nay</string>
+    <string name="time">Thời lượng</string>
+    <string name="time_empty">Chọn khoảng thời gian</string>
+    <string name="time_from">Khoảng thời gian</string>
+    <string name="time_mode_interest">Loại thời gian</string>
+    <string name="next_month">Tháng sau</string>
+    <string name="next_web">Tiếp</string>
+    <string name="nextmonth">Tháng tới</string>
+    <string name="nextquarter">Quý tới</string>
+    <string name="nextweek">Tuần tới</string>
+    <string name="nextyear">Năm tới</string>
+    <string name="add_budget">Thêm Ngân Sách</string>
+    <string name="remain_prefix">Còn</string>
+
+    <string name="day">ngày</string>
+    <string name="month">tháng</string>
+    <string name="year">năm</string>
+    <string name="finnished">Đã kết thúc</string>
+    <string name="notification_budget_overspending">Chi vượt mức</string>
+    <string name="in">Trong</string>
+
+    <string name="ContentDescriptionImageNull" translatable="false">image null</string>
+    <string name="NoImage" translatable="false">Imgage</string>
+    <string name="Cancel" translatable="false">thoát</string>
+    <string name="edit_transaction_mark_remove_message">remove message</string>
+    <string name="sync">Đồng bộ</string>
+    <string name="edit_transaction">Sửa giao dịch</string>
+    <string name="sync_in_progress">Đang đồng bộ</string>
+    <string name="try_again">Thử lại</string>
 </resources>

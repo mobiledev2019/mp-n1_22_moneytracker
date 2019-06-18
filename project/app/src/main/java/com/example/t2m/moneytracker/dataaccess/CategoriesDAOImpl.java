@@ -148,8 +148,14 @@ public class CategoriesDAOImpl implements ICategoriesDAO {
         int type = data.getInt(data.getColumnIndex(COLUMN_CATEGORY_TYPE));
         String category = data.getString(data.getColumnIndex(COLUMN_CATEGORY_CATEGORY));
         String icon = data.getString(data.getColumnIndex(COLUMN_CATEGORY_ICON));
-        Category parent = null;
-        return new Category(id, type, category, icon, new ArrayList<Category>());
+        Category result = new Category(id, type, category, icon, new ArrayList<Category>());
+        if(!data.isNull(data.getColumnIndex(COLUMN_CATEGORY_PARENT_ID))) {
+            int parrentId = data.getInt(data.getColumnIndex(COLUMN_CATEGORY_PARENT_ID));
+            Category parent = getCategoryById(parrentId);
+            result.setParentCategory(parent);
+
+        }
+        return result;
     }
 
     private Cursor getCategoryDataById(int id) {

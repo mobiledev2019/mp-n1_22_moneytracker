@@ -1,19 +1,29 @@
 package com.example.t2m.moneytracker.transaction;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.t2m.moneytracker.R;
+import com.example.t2m.moneytracker.common.Constants;
+import com.example.t2m.moneytracker.dataaccess.ITransactionsDAO;
+import com.example.t2m.moneytracker.dataaccess.TransactionsDAOImpl;
 import com.example.t2m.moneytracker.model.MTDate;
 import com.example.t2m.moneytracker.model.Transaction;
 import com.example.t2m.moneytracker.utilities.BitmapUtils;
+import com.example.t2m.moneytracker.utilities.CurrencyUtils;
+import com.example.t2m.moneytracker.utilities.TransactionsManager;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -28,6 +38,8 @@ public class ViewTransactionDetailActivity extends AppCompatActivity {
     private TextView mTextDate;
     private TextView mTextWallet;
     private ImageView mImgPreview;
+
+    private static final int REQUEST_EDIT_TRANSACTION = 1;
 
     private Transaction mTransaction;
     @Override
@@ -68,9 +80,30 @@ public class ViewTransactionDetailActivity extends AppCompatActivity {
     }
 
     private void onClickedEdit() {
+
+        Intent intent = new Intent(ViewTransactionDetailActivity.this,EditTransactionActivity.class);
+        intent.putExtra(EditTransactionActivity.EXTRA_TRANSACTION,mTransaction);
+        startActivityForResult(intent,REQUEST_EDIT_TRANSACTION);
     }
 
     private void onClickedDelete() {
+        AlertDialog alertDialog = new AlertDialog.Builder(this)
+                .setTitle("Xóa giao dịch")
+                .setMessage("Bạn có chắc chắn xóa giao dịch này?")
+                .setPositiveButton("OK",new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        TransactionsManager.getInstance(ViewTransactionDetailActivity.this).deleteTransaction(mTransaction);
+                        setResult(RESULT_OK);
+                        finish();
+                    }
+                })
+                .setNegativeButton("Cancel", null)
+                .setIcon(R.drawable.ic_input_warning)
+                .show();
+
+        alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.colorMoneyTradingPositive));
+        alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.colorMoneyTradingNegative));
     }
 
     @Override
@@ -100,6 +133,7 @@ public class ViewTransactionDetailActivity extends AppCompatActivity {
 
     private void updateUI() {
         if(mTransaction != null) {
+            //Toast.makeText(this, "" + mTransaction.getTransactionDate(), Toast.LENGTH_LONG).show();
             mTextCategory.setText(mTransaction.getCategory().getCategory());
             ImageView imageView = findViewById(R.id.image_transaction_category);
             // lấy ảnh từ asset
@@ -113,7 +147,7 @@ public class ViewTransactionDetailActivity extends AppCompatActivity {
 
             mTextDate.setText(new MTDate(mTransaction.getTransactionDate()).toIsoDateShortTimeString());
             mTextMoney.setText(String.valueOf(mTransaction.getMoneyTrading()));
-            if(mTransaction.getMoneyTrading() >= 0) {
+            if(mTransaction.getMoneyTradingWithSign() >= 0) {
                 mTextMoney.setTextColor(getResources().getColor(R.color.colorMoneyTradingPositive));
             }
             else {
@@ -139,4 +173,14 @@ public class ViewTransactionDetailActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == RESULT_OK) {
+            if(requestCode == REQUEST_EDIT_TRANSACTION) {
+                mTransaction = (Transaction) data.getSerializableExtra(EditTransactionActivity.EXTRA_TRANSACTION);
+                updateUI();
+            }
+        }
+    }
 }

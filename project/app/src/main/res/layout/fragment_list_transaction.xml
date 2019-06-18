@@ -18,5 +18,25 @@
 
     </com.example.t2m.moneytracker.pinnedlistview.PinnedHeaderListView>
 
+    <LinearLayout
+        android:id="@+id/layout_transaction_empty"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="64sp"
+            android:hint="^.^"/>
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_transaction"
+            android:textSize="26sp"/>
+
+    </LinearLayout>
 
 </RelativeLayout>

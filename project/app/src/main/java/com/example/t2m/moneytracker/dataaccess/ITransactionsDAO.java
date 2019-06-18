@@ -13,9 +13,13 @@ public interface ITransactionsDAO {
     public boolean updateTransaction(Transaction transaction);
     public boolean deleteTransaction(Transaction transaction);
 
-    public Transaction getTransactionById(int transactionId);
+    public Transaction getTransactionById(long transactionId);
 
     public List<Transaction> getAllTransaction();
-    public List<Transaction> getAllTransactionByWalletId(int walletId);
-    public List<Transaction> getAllTransactionByPeriod(int walletId,DateRange dateRange);
+    public List<Transaction> getAllTransactionByWalletId(long walletId);
+    public List<Transaction> getAllTransactionByPeriod(long walletId,DateRange dateRange);
+
+    public void updateTimeStamp(long transactionId, long timestamp);
+
+    public List<Transaction> getAllSyncTransaction(long walletId,long timestamp);
 }

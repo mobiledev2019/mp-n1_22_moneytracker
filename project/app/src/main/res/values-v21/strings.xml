@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="edit_transaction_mark_remove_message">remove message</string>
+    <string name="sync_in_progress">Đang đồng bộ</string>
+    <string name="try_again">Thử lại</string>
+</resources>

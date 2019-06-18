@@ -36,6 +36,7 @@ import com.example.t2m.moneytracker.model.Category;
 import com.example.t2m.moneytracker.model.Wallet;
 import com.example.t2m.moneytracker.utilities.BitmapUtils;
 import com.example.t2m.moneytracker.utilities.TransactionsManager;
+import com.example.t2m.moneytracker.view.CurrencyEditText;
 import com.example.t2m.moneytracker.wallet.SelectCategoryActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -183,7 +184,7 @@ public class AddTransactionActivity extends AppCompatActivity {
         if(mCurrentImage != null) {
             mMediaUri = BitmapUtils.saveImage(this,mCurrentImage);
         }
-        float money = Float.parseFloat(mTextMoney.getText().toString());
+        float money = (float) ((CurrencyEditText)mTextMoney).getCleanDoubleValue();
         String note = mTextNote.getText().toString();
         Date date = mCalendar.getTime();
         Transaction transaction = new Transaction.TransactionBuilder()
@@ -195,6 +196,7 @@ public class AddTransactionActivity extends AppCompatActivity {
                 .setTransactionNote(note)
                 .setMediaUri(mMediaUri)
                 .build();
+
 
         TransactionsManager.getInstance(this).addTransaction(transaction);
 

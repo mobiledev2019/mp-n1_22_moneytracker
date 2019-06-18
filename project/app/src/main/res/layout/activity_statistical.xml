@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent" android:layout_height="wrap_content"
+  android:background="@color/colorBackgroundItem">
+    <Spinner
+      android:id="@+id/spinner1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@android:drawable/btn_dropdown"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentTop="true"
+      android:layout_marginLeft="8dp"
+      android:layout_marginTop="8dp"
+      android:spinnerMode="dropdown"/>
+    <Spinner
+      android:id="@+id/spinner2"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@android:drawable/btn_dropdown"
+      android:layout_below="@+id/spinner1"
+      android:layout_alignParentLeft="true"
+      android:layout_marginLeft="8dp"
+      android:layout_marginTop="8dp"
+      android:spinnerMode="dropdown"/>
+
+
+  <!--<com.github.mikephil.charting.charts.PieChart-->
+      <!--android:id="@+id/piechart"-->
+      <!--android:layout_width="match_parent"-->
+      <!--android:layout_height="250dp"-->
+      <!--android:layout_marginTop="10dp"-->
+      <!--android:layout_alignParentTop="true"-->
+      <!--/>-->
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <com.github.mikephil.charting.charts.PieChart
+      android:id="@+id/piechart"
+      android:layout_width="match_parent"
+      android:layout_height="250dp"
+      android:layout_marginTop="10dp"
+      android:layout_alignParentTop="true"
+      />
+
+    <com.github.mikephil.charting.charts.CombinedChart
+      android:id="@+id/combinedChart"
+      android:layout_width="match_parent"
+      android:layout_height="300dp"
+      android:layout_below="@id/piechart"
+      android:layout_marginTop="129dp" />
+   </RelativeLayout>
+

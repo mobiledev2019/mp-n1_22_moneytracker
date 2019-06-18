@@ -34,7 +34,7 @@
                         android:layout_margin="8dp"
                         android:src="@drawable/ic_attach_money_black_24dp" />
 
-                    <EditText
+                    <com.example.t2m.moneytracker.view.CurrencyEditText
                         android:id="@+id/text_transaction_money"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

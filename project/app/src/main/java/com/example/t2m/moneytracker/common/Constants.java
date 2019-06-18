@@ -1,7 +1,8 @@
 package com.example.t2m.moneytracker.common;
 
 public class Constants {
-public static final String AppPreferences = "MoneyTracker.App.SharedPreferences";
+   public static final String AppPreferences = "MoneyTracker.App.SharedPreferences";
+   public static final String SettingsPreferences = "MoneyTracker.Settings.SharedPreferences";
 
     // Date/Time
     public static final String ISO_DATE_FORMAT = "yyyy-MM-dd";

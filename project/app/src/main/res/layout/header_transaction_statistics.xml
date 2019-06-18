@@ -23,7 +23,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/so_du_cuoi" />
 
-    <TextView
+    <com.example.t2m.moneytracker.view.CurrencyTextView
         android:id="@+id/fts_so_du_dau"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp" />
 
-    <TextView
+    <com.example.t2m.moneytracker.view.CurrencyTextView
         android:id="@+id/fts_so_du_cuoi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"/>
-    <TextView
+    <com.example.t2m.moneytracker.view.CurrencyTextView
         android:id="@+id/fts_con_lai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

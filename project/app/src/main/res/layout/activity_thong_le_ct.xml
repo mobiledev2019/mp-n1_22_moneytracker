@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView
+        android:id="@+id/ScrollViewhuy"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/BarHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip"
+            android:id="@+id/huy"
+            android:baselineAligned="false">
+            <LinearLayout android:gravity="center"
+                android:id="@+id/lnEditAccount"
+                android:background="@drawable/selector_button_back"
+                android:clickable="true"
+                android:layout_width="50.0dip"
+                android:layout_height="50.0dip">
+                <ImageView
+                    android:layout_width="50.0dip"
+                    android:layout_height="50.0dip"
+                    android:src="@drawable/edit"
+                    android:contentDescription="@string/NoImage" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center"
+                android:id="@+id/lnEditAccountDone"
+                android:background="@drawable/selector_button_back"
+                android:visibility="gone" android:clickable="true"
+                android:layout_width="50.0dip" android:layout_height="50.0dip">
+                <ImageView android:layout_width="50.0dip"
+                    android:layout_height="50.0dip"
+                    android:src="@drawable/done_header_icon"
+                    android:contentDescription="@string/NoImage" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center"
+                android:id="@+id/tvHeaderName"
+                android:clickable="false"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+
+                android:layout_weight="1.0"
+                style="@style/TextHeader"
+                android:orientation="horizontal">
+                <android.support.design.widget.TabLayout
+                    android:background="@color/BarHeader"
+                    android:layout_alignParentTop="true"
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:tabSelectedTextColor="#ffffff"
+                    app:tabTextColor="#35766f"
+                    >
+                </android.support.design.widget.TabLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center"
+                android:id="@+id/btnAdd"
+                android:background="@drawable/selector_button_add"
+                android:clickable="true"
+                android:layout_width="50.0dip"
+                android:layout_height="50.0dip"
+                android:minWidth="50.0dip">
+                <ImageView android:id="@+id/imgAdd"
+                    android:layout_width="50.0dip"
+                    android:layout_height="50.0dip"
+                    android:src="@drawable/add"
+                    android:contentDescription="@string/NoImage" />
+            </LinearLayout>
+            <TextView android:gravity="center"
+                android:id="@+id/tvCancel"
+                android:background="@drawable/selector_button_add"
+                android:paddingLeft="5.0dip"
+                android:paddingRight="5.0dip"
+                android:visibility="gone"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="50.0dip"
+                android:minWidth="50.0dip"
+                android:text="@string/Cancel"
+                style="@style/TextHeader" />
+        </LinearLayout>
+    </ScrollView>
+    <android.support.v4.view.ViewPager
+        android:layout_below="@id/ScrollViewhuy"
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</RelativeLayout>

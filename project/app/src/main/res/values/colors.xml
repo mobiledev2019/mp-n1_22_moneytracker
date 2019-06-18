@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2baf2b</color>
-    <color name="colorPrimaryDark">#007e00</color>
-    <color name="colorAccent">#68e25c</color>
+
+    <color name="a_100">#a2f78d</color>
+
+    <color name="a_200">#5af158</color>
+
+    <color name="a_400">#14e715</color>
+
+    <color name="colorPrimary">@color/p_500</color>
+    <color name="colorPrimaryDark">@color/p_750</color>
+    <color name="colorAccent">@color/a_200</color>
+
+    <color name="circle_background">#fff2f2f2</color>
 
     <color name="primaryDarkColor">#007e00</color>
     <color name="colorBackgroundPrimary">#EEEEEE</color>
@@ -21,6 +30,85 @@
     <color name="colorTextSecondaryDark">#b3ffffff</color>
     <color name="colorTextDisabledDark">#4c734646</color>
 
-    <color name="colorMoneyTradingNegative">#F00</color>
-    <color name="colorMoneyTradingPositive">#0F0</color>
+    <color name="colorMoneyTradingNegative">#ffd75c42</color>
+    <color name="colorMoneyTradingPositive">#ff59bf4a</color>
+
+    <color name="colorTabBackground">@color/colorPrimary</color>
+    <color name="colorTabBackgroundSelected">@color/colorPrimary</color>
+    <color name="colorTabTitle">@color/colorTextSecondaryDark</color>
+    <color name="colorTabTitleSelected">@color/colorTextPrimaryDark</color>
+
+    <color name="o_300">#ffb74d</color>
+
+    <color name="o_500">#ff9800</color>
+
+    <color name="o_900">#e65100</color>
+
+    <color name="p_100">#a3e9a4</color>
+
+    <color name="p_500">#2db84c</color>
+
+    <color name="p_700">#0a7e07</color>
+
+    <color name="p_750">#247936</color>
+    <color name="g_100">#f5f5f5</color>
+
+    <color name="g_200">#eeeeee</color>
+
+    <color name="g_300">#e0e0e0</color>
+
+    <color name="g_400">#bdbdbd</color>
+
+    <color name="g_50">#fafafa</color>
+
+    <color name="g_500">#9e9e9e</color>
+
+    <color name="g_600">#757575</color>
+
+    <color name="g_700">#616161</color>
+
+    <color name="g_800">#424242</color>
+
+    <color name="g_900">#212121</color>
+    <color name="b_200">#81d4fa</color>
+
+    <color name="b_600">#039be5</color>
+
+    <color name="b_800">#0277bd</color>
+
+    <color name="r_300">#f36c60</color>
+
+    <color name="r_500">#e51c23</color>
+
+    <color name="r_900">#b0120a</color>
+
+    <color name="press_highlight_darken_medium">#40000000</color>
+
+    <color name="press_highlight_lighten_medium">#60ffffff</color>
+    <color name="button_calculator">#fff</color>
+
+    <color name="button_calculator_operator">#eee</color>
+
+    <color name="button_calculator_operator_pressed">#bbb</color>
+
+    <color name="button_calculator_operator_shadow">#111111</color>
+
+    <color name="button_calculator_pressed">#ccc</color>
+
+    <color name="button_calculator_shadow">#111111</color>
+
+    <color name="button_white_pressed">#f3f3f3</color>
+
+    <color name="calculator_background">#ddd</color>
+
+    <color name="calendar_header">#ff999999</color>
+
+    <color name="divider_dark">#1effffff</color>
+
+    <color name="divider_light">#1e000000</color>
+
+    <color name="Line">#ffcdcdcd</color>
+    <color name="BarHeader">#009688</color>
+
+    <color name="transparent">#00000000</color>
 </resources>

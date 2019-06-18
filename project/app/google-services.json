@@ -1,52 +1,45 @@
 {
   "project_info": {
-    "project_number": "563117443505",
-    "firebase_url": "https://moneytracker-t2m.firebaseio.com",
-    "project_id": "moneytracker-t2m",
-    "storage_bucket": "moneytracker-t2m.appspot.com"
+    "project_number": "155017325181",
+    "firebase_url": "https://helloword-mint.firebaseio.com",
+    "project_id": "helloword-mint",
+    "storage_bucket": "helloword-mint.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:563117443505:android:6f9998693fffd807",
+        "mobilesdk_app_id": "1:155017325181:android:6f9998693fffd807",
         "android_client_info": {
           "package_name": "com.example.t2m.moneytracker"
         }
       },
       "oauth_client": [
         {
-          "client_id": "563117443505-rbghqmg7sltdi6krrofaaombs4k70cr8.apps.googleusercontent.com",
+          "client_id": "155017325181-uco6k455q82839rrfgjalm1g04sa912n.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.t2m.moneytracker",
-            "certificate_hash": "860d9b085e9d328cba62683f975ac82626952115"
+            "certificate_hash": "2bcffdba611a49a213d0354671a9007bdb00f8d1"
           }
         },
         {
-          "client_id": "563117443505-bd1r22nithf5tb6qf4mck4d1vou9ninm.apps.googleusercontent.com",
+          "client_id": "155017325181-fo8g8ocb03mf8m61u2v40goljmia0gqf.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCJb5rbWuy9dZxJjjd_exBFTINbk5lNnoc"
+          "current_key": "AIzaSyBZLfDHqZRd_Wbub7u_wPrmCqoYg9LDIZ8"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "563117443505-bd1r22nithf5tb6qf4mck4d1vou9ninm.apps.googleusercontent.com",
+              "client_id": "155017325181-fo8g8ocb03mf8m61u2v40goljmia0gqf.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }

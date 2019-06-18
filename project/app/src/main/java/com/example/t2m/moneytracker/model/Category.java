@@ -8,6 +8,20 @@ public class Category implements Serializable {
     private TransactionTypes type;
     private String icon;
     private String category;
+
+    public void setType(TransactionTypes type) {
+        this.type = type;
+    }
+
+    public Category getParentCategory() {
+        return parentCategory;
+    }
+
+    public void setParentCategory(Category parentCategory) {
+        this.parentCategory = parentCategory;
+    }
+
+    private Category parentCategory;
     private List<Category> subCategories;
 
 

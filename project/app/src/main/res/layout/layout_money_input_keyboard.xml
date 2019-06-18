@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/keyboard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/calculator_background"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/button_spacing">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/button_spacing"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/button17"
+            style="@style/ButtonOperator"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/app_name"
+            android:gravity="center"
+            android:text="C" />
+
+        <TextView
+            android:id="@+id/button7"
+            style="@style/ButtonCalculatorNumber"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/button_spacing"
+            android:layout_weight="1"
+            android:text="7" />
+
+        <TextView
+            android:id="@+id/button4"
+            style="@style/ButtonCalculatorNumber"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/button_spacing"
+            android:layout_weight="1"
+            android:text="4" />
+
+        <TextView
+            android:id="@+id/button1"
+            style="@style/ButtonCalculatorNumber"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/button_spacing"
+            android:layout_weight="1"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/button14"
+            style="@style/ButtonCalculatorNumber"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/button_spacing"
+            android:layout_weight="1"
+            android:text="0" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/button_spacing"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/button10"
+            style="@style/ButtonOperator"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="÷" />
+
+        <TextView
+            android:id="@+id/button8"
+            style="@style/ButtonCalculatorNumber"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/button_spacing"
+            android:layout_weight="1"
+            android:text="8" />
+
+        <TextView
+            android:id="@+id/button5"
+            style="@style/ButtonCalculatorNumber"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/button_spacing"
+            android:layout_weight="1"
+            android:text="5" />
+
+        <TextView
+            android:id="@+id/button2"
+            style="@style/ButtonCalculatorNumber"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/button_spacing"
+            android:layout_weight="1"
+            android:text="2" />
+
+        <TextView
+            android:id="@+id/button21"
+            style="@style/ButtonCalculatorNumber"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/button_spacing"
+            android:layout_weight="1"
+            android:text="000" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/button_spacing"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:weightSum="5">
+
+        <TextView
+            android:id="@+id/button11"
+            style="@style/ButtonOperator"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="×" />
+
+        <TextView
+            android:id="@+id/button9"
+            style="@style/ButtonCalculatorNumber"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/button_spacing"
+            android:layout_weight="1"
+            android:text="9" />
+
+        <TextView
+            android:id="@+id/button6"
+            style="@style/ButtonCalculatorNumber"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/button_spacing"
+            android:layout_weight="1"
+            android:text="6" />
+
+        <TextView
+            android:id="@+id/button3"
+            style="@style/ButtonCalculatorNumber"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/button_spacing"
+            android:layout_weight="1"
+            android:text="3" />
+
+        <TextView
+            android:id="@+id/button15"
+            style="@style/ButtonCalculatorNumber"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/button_spacing"
+            android:layout_weight="1"
+            android:text="." />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/button16"
+            style="@style/ButtonOperator"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_backspace_green" />
+
+        <TextView
+            android:id="@+id/button12"
+            style="@style/ButtonOperator"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/button_spacing"
+            android:layout_weight="1"
+            android:text="–" />
+
+        <TextView
+            android:id="@+id/button13"
+            style="@style/ButtonOperator"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/button_spacing"
+            android:layout_weight="1"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/button19"
+            style="@style/ButtonOperator"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/button_spacing"
+            android:layout_weight="2"
+            android:contentDescription="@string/app_name"
+            android:text="Xong"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF"
+            android:textAlignment="center" />
+    </LinearLayout>
+</LinearLayout>

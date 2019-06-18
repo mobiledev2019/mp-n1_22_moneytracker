@@ -39,8 +39,6 @@ public class SelectCategoryActivity extends AppCompatActivity implements ListCat
 
 
     private void addEvents() {
-
-
         mAdapter = new CategoriesPagerAdapter(this.getSupportFragmentManager(),this);
         mViewPager.setAdapter(mAdapter);
         mTabLayout.setupWithViewPager(mViewPager);

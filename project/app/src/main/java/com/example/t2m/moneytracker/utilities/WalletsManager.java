@@ -5,6 +5,7 @@ import android.content.Context;
 import com.example.t2m.moneytracker.dataaccess.IWalletsDAO;
 import com.example.t2m.moneytracker.dataaccess.MoneyTrackerDBHelper;
 import com.example.t2m.moneytracker.dataaccess.WalletsDAOImpl;
+import com.example.t2m.moneytracker.model.Transaction;
 import com.example.t2m.moneytracker.model.Wallet;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -37,5 +38,14 @@ public class WalletsManager {
             return iWalletsDAO.getAllWalletByUser(currentUser.getUid()).get(0);
         }
         return null;
+    }
+
+    public boolean updateWallet(Wallet wallet) {
+        return  iWalletsDAO.updateWallet(wallet);
+    }
+
+    public void updateTimestamp(int walletId, long time) {
+        iWalletsDAO.updateTimeStamp(walletId,time);
+
     }
 }

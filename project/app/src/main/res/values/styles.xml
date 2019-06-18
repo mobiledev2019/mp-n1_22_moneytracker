@@ -4,14 +4,10 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorStatusBar</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:colorBackground">@color/colorBackgroundPrimary</item>
-        <item name="android:textColorPrimary">@color/colorTextPrimary</item>
-        <item name="android:textColorPrimaryInverse">@color/colorTextPrimaryDark</item>
-        <item name="android:textColorSecondary">@color/colorTextSecondary</item>
-        <item name="android:textColorSecondaryInverse">@color/colorTextSecondaryDark</item>
-        <item name="android:colorForeground">@color/colorBackgroundItem</item>
+        <!--<item name="android:textColor">@color/colorTextPrimary</item>-->
     </style>
 
 
@@ -19,22 +15,75 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorStatusBar</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:colorBackground">@color/colorBackgroundPrimary</item>
-        <item name="android:textColorPrimary">@color/colorTextPrimary</item>
-        <item name="android:textColorPrimaryInverse">@color/colorTextPrimaryDark</item>
-        <item name="android:textColorSecondary">@color/colorTextSecondary</item>
-        <item name="android:textColorSecondaryInverse">@color/colorTextSecondaryDark</item>
-        <item name="android:colorForeground">@color/colorBackgroundItem</item>
+        <!--<item name="android:textColor">@color/colorTextPrimary</item>-->
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" >
 
+    </style>
+
+    <style name="AppTheme.ThemeOverlay" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="android:textColor">@color/colorTextPrimaryDark</item>
+    </style>
     <style name="Seperator">
         <item name="android:layout_height">1dp</item>
         <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="DetailCardArrowRight">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:src">@drawable/ic_navigate_next</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+    <style name="ButtonCalculator">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#2db84c</item>
+    </style>
+    <style name="ButtonCalculatorNumber">
+        <item name="android:background">@drawable/button_calculator</item>
+    </style>
+    <style name="ButtonOperator">
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/button_calculator_operator</item>
+    </style>
+
+    <style name="progressBarPositive" parent="@style/Theme.AppCompat">
+        <item name="colorAccent">@color/colorMoneyTradingPositive</item>
+    </style>
+    <style name="progressBarNegativve" parent="@style/Theme.AppCompat">
+        <item name="colorAccent">@color/colorMoneyTradingNegative</item>
+    </style>
+
+    <style name="TextViewCurrentAccountBlue">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff37a3a0</item>
+    </style>
+    <style name="FormEditValue">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#009688</item>
+    </style>
+    <style name="FormEditTitle">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+    <style name="TextViewStyle">
+        <item name="android:textSize">19.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="TextHeader">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ffffffff</item>
     </style>
 </resources>
