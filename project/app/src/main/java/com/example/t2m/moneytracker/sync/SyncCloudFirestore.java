@@ -54,7 +54,7 @@ public class SyncCloudFirestore {
 
     public boolean onSync(Wallet wallet) {
         onPullTransactions(wallet);
-        addTransactions(wallet);
+        onPushSync(wallet);
         return true;
     }
 

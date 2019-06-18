@@ -75,6 +75,10 @@ public class TransactionsManager {
 
     public boolean addTransaction(Transaction transaction) {
         if(transaction == null) return  false;
+        Transaction hasTran = iTransactionsDAO.getTransactionById(transaction.getTransactionId());
+        if(hasTran != null) {
+            return false;
+        }
         transactions.add(transaction);
         iTransactionsDAO.insertTransaction(transaction);
 

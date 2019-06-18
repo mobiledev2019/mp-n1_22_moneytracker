@@ -148,7 +148,8 @@ public class TransactionsDAOImpl implements ITransactionsDAO {
     private Cursor getAllTransactionDataByWalletId(long walletId) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String query = "SELECT * FROM " + TABLE_TRANSACTION_NAME +
-                " WHERE " + COLUMN_WALLET_ID_FK + " = ?";
+                " WHERE " + COLUMN_WALLET_ID_FK + " = ?" +
+                " ORDER BY " + COLUMN_TRANSACTION_DATE;
         return db.rawQuery(query, new String[]{String.valueOf(walletId)});
     }
     private Cursor getAllTransactionDataByWalletId(long walletId, DateRange dateRange) {

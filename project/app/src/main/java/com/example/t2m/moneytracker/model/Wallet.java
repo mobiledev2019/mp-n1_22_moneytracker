@@ -110,7 +110,7 @@ public class Wallet implements Serializable {
         values.put("_id", walletId);
         values.put("uid",userUID);
         values.put("name",walletName);
-        values.put("balance",0.0); 
+        values.put("balance",0.0);
         values.put("currencyCode",currencyCode);
         values.put("type",walletType);
         values.put("logo",imageSrc);
