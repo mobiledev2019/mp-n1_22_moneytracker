@@ -88,7 +88,7 @@ public class WalletsDAOImpl implements IWalletsDAO {
         db.insert(TABLE_WALLET_NAME, null, values);
         db.close();
         wallet.setWalletId(id);
-        updateTimeStamp(id, com.google.firebase.Timestamp.now().getSeconds());
+        updateTimeStamp(id, com.google.firebase.Timestamp.now().toDate().getTime());
         return true;
     }
 
@@ -104,7 +104,7 @@ public class WalletsDAOImpl implements IWalletsDAO {
         db.update(TABLE_WALLET_NAME, values, COLUMN_WALLET_ID + " = ?", new String[]{String.valueOf(wallet.getWalletId())});
         db.close();
 
-        updateTimeStamp(wallet.getWalletId(), com.google.firebase.Timestamp.now().getSeconds());
+        updateTimeStamp(wallet.getWalletId(), com.google.firebase.Timestamp.now().toDate().getTime());
         return true;
     }
 

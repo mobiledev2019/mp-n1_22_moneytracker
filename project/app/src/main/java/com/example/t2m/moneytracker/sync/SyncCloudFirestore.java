@@ -26,6 +26,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.WriteBatch;
 
+import java.util.Date;
 import java.util.List;
 
 public class SyncCloudFirestore {
@@ -53,7 +54,7 @@ public class SyncCloudFirestore {
 
     public boolean onSync(Wallet wallet) {
         onPullTransactions(wallet);
-        onPushSync(wallet);
+        addTransactions(wallet);
         return true;
     }
 
@@ -100,7 +101,7 @@ public class SyncCloudFirestore {
                 .collection("wallets")
                 .document("wallet_" + wallet.getWalletId())
                 .collection("transactions")
-                .whereGreaterThan("timestamp",new Timestamp(time_pull,0))
+                .whereGreaterThan("timestamp",new Timestamp(new Date(time_pull)))
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -111,7 +112,7 @@ public class SyncCloudFirestore {
                                 Transaction transaction = Transaction.fromMap(document.getData());
                                 TransactionsManager.getInstance(context).addTransaction(transaction);
                             }
-                            long timestamp = Timestamp.now().getSeconds();
+                            long timestamp = Timestamp.now().toDate().getTime();
                             SharedPrefs.getInstance().put(SharedPrefs.KEY_PULL_TIME,timestamp);
                             if(syncEvents != null) {
                                 syncEvents.onPullTransactionComplete();
@@ -151,9 +152,7 @@ public class SyncCloudFirestore {
 
     public void onPushSync(Wallet wallet) {
         addWallet(wallet);
-        long time_pull = SharedPrefs.getInstance().get(SharedPrefs.KEY_PUSH_TIME,0);
-        List<Transaction> transactions = new TransactionsDAOImpl(context).getAllSyncTransaction(wallet.getWalletId(), time_pull);
-        addTransactions(transactions,wallet);
+        addTransactions(wallet);
 
 
 //        WalletsManager.getInstance(context).updateTimestamp(wallet.getWalletId(),timestamp);
@@ -176,15 +175,16 @@ public class SyncCloudFirestore {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-
                         Log.d(TAG_LOG,"Add wallet failure");
                         Log.d(TAG_LOG,e.getMessage());
                     }
                 });
     }
 
-    public void addTransactions(List<Transaction> transactions,Wallet wallet) {
+    public void addTransactions(Wallet wallet) {
 
+        long time_pull = SharedPrefs.getInstance().get(SharedPrefs.KEY_PUSH_TIME,0);
+        List<Transaction> transactions = new TransactionsDAOImpl(context).getAllSyncTransaction(wallet.getWalletId(), time_pull);
         WriteBatch writeBatch = db.batch();
 
         CollectionReference transactionsRef = db.collection("users")
@@ -203,7 +203,7 @@ public class SyncCloudFirestore {
             public void onSuccess(Void aVoid) {
                 Log.d(TAG_LOG,"Add transactions success");
                 // update push time
-                long timestamp = Timestamp.now().getSeconds();
+                long timestamp = Timestamp.now().toDate().getTime();
                 SharedPrefs.getInstance().put(SharedPrefs.KEY_PUSH_TIME,timestamp);
             }
         }).addOnFailureListener(new OnFailureListener() {
