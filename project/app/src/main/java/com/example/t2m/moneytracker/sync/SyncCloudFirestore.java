@@ -76,11 +76,12 @@ public class SyncCloudFirestore {
                                 Log.d(TAG_LOG, document.getId() + " => " + document.getData());
                                 Wallet wallet = Wallet.fronMap(document.getData());
                                 iWalletsDAO.insertWallet(wallet);
-                                onPullTransactions(wallet);
-                                if(syncEvents != null) {
-                                    syncEvents.onPullWalletComplete();
-                                }
+                                //onPullTransactions(wallet);
                             }
+                            if(syncEvents != null) {
+                                syncEvents.onPullWalletComplete();
+                            }
+
                         } else {
                             Log.d(TAG_LOG, "Error getting documents: ", task.getException());
                             if(syncEvents != null) {

@@ -11,6 +11,7 @@ import com.example.t2m.moneytracker.R;
 import com.example.t2m.moneytracker.account.LoginActivity;
 import com.example.t2m.moneytracker.dataaccess.IWalletsDAO;
 import com.example.t2m.moneytracker.dataaccess.WalletsDAOImpl;
+import com.example.t2m.moneytracker.utilities.WalletsManager;
 import com.example.t2m.moneytracker.wallet.AddWalletActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -61,8 +62,17 @@ public class SyncActivity extends AppCompatActivity implements SyncEvents {
 
     @Override
     public void onPullWalletComplete() {
-        textTryAgain.setVisibility(View.VISIBLE);
-        textOnSync.setVisibility(View.INVISIBLE);
+        IWalletsDAO iWalletsDAO = new WalletsDAOImpl(this);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if(iWalletsDAO.hasWallet(user.getUid()) ) {
+            SyncCloudFirestore syncCloudFirestore = new SyncCloudFirestore(this);
+            syncCloudFirestore.setSyncEvents(this);
+            syncCloudFirestore.onPullTransactions(WalletsManager.getInstance(this).getCurrentWallet());
+        }
+        else {
+            Intent intent = new Intent(SyncActivity.this, AddWalletActivity.class);
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -73,17 +83,8 @@ public class SyncActivity extends AppCompatActivity implements SyncEvents {
 
     @Override
     public void onPullTransactionComplete() {
-
-        IWalletsDAO iWalletsDAO = new WalletsDAOImpl(this);
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if(iWalletsDAO.hasWallet(user.getUid()) ) {
-            Intent intent = new Intent(SyncActivity.this, MainActivity.class);
-            startActivity(intent);
-        }
-        else {
-            Intent intent = new Intent(SyncActivity.this, AddWalletActivity.class);
-            startActivity(intent);
-        }
+        Intent intent = new Intent(SyncActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 
     @Override
